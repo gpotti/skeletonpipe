@@ -23,18 +23,23 @@ pipeline{ //beginning of pipeline
     
     stage ('Parallel Test') {
       parallel {
-        stages {
-        stage ('static test') {
-          steps {
-            echo 'static test'
-          }//step static testend
-        }//stage static test end
-        stage ('QA') {
-          steps {
-            echo 'QA'
-          }//step QA end
-        }//stage QA end
-        } //sequential stages end
+        stage ('Tests in seq') {
+          stages { //multiple stages
+           stage ('static test') {
+              steps {
+               echo 'static test'
+              }//step static testend
+            }//stage static test end
+ 
+           stage ('QA') {
+             steps {
+               echo 'QA'
+             }//step QA end
+            }//stage QA end
+
+          } //multiple stages end
+        } //tests in seq stage end
+      
         stage ('Unit test') {
           steps {
             echo 'Unit test'
