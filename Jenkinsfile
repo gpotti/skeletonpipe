@@ -1,8 +1,8 @@
 pipeline{ //beginning of pipeline
   agent any
-  parameters {
+ // parameters {
     //
-  }
+ // }
   stages { //beginning of all stages
     stage ('Git pull'){
       steps {
@@ -24,7 +24,7 @@ pipeline{ //beginning of pipeline
     
     stage ( 'Test') {
       parallel {
-        stage ('Testing') {
+        //stage ('Testing') {
           stages {
             stage ('Static Test') {
               steps{
@@ -42,7 +42,7 @@ pipeline{ //beginning of pipeline
               echo 'unit test in parallel ON'
             } //step unit test end
           } //stage unit test end
-        } //Stage testing end
+        //} //Stage testing end
       } //end of parallel
     } //end of stage Test
       
