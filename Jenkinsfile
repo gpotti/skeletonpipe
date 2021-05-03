@@ -22,7 +22,7 @@ pipeline{ //beginning of pipeline
       }
     } //build stage end
     
-    stage ( 'Test') {
+    stage ('Test') {
      steps { //to add another stage in parallel, adding steps 
       parallel {
         stage ('Testing') {
