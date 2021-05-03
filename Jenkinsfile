@@ -21,5 +21,22 @@ pipeline{ //beginning of pipeline
       }
     } //build stage end
     
+    stage ('Parallel Test') {
+      parallel {
+        stage ('static test') {
+          steps {
+            echo 'static test'
+          }//step static testend
+        }//stage static test end
+        stage ('Unit test') {
+          steps {
+            echo 'Unit test'
+          }//step unit test end
+        }//stage unit test end
+      } //end of parallel
+    }//end of stage parallel test
+        
+        
+    
   } //end of all stages
 } //end of pipeline
