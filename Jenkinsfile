@@ -44,6 +44,7 @@ pipeline{ //beginning of pipeline
           } //stage unit test end
         } //Stage testing end
       } //end of parallel
+    } //end of stage Test
       
       stage ('deploy') {
         steps {
