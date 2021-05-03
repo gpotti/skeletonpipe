@@ -1,4 +1,4 @@
-pipeline{
+pipeline{ //beginning of pipeline
   agent any
   parameters {
     //
@@ -52,4 +52,5 @@ pipeline{
       } //end of deploy stage
       
     } //end of all stages 
+  } //end of pipeline
               
